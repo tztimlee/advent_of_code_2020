@@ -5,11 +5,12 @@ fn main() {
     let contents = fs::read_to_string("input2")
         .expect("Something went wrong reading the file");
 
-    let a = old_tree_count(contents.lines(), 1, 1);
-    let b = old_tree_count(contents.lines(), 3, 1);
-    let c = old_tree_count(contents.lines(), 5, 1);
-    let d = old_tree_count(contents.lines(), 7, 1);
-    let e = old_tree_count(contents.lines(), 1, 2);
+    println!("Hi Alex");
+    let a = tree_count(contents.lines(), 1, 1);
+    let b = tree_count(contents.lines(), 3, 1);
+    let c = tree_count(contents.lines(), 5, 1);
+    let d = tree_count(contents.lines(), 7, 1);
+    let e = tree_count(contents.lines(), 1, 2);
     println!("a: {}, b: {}, c: {}, d: {}, e: {}", a,b,c,d,e);
     println!("new answer = {}", a*b*c*d*e);
     
@@ -44,7 +45,7 @@ fn main() {
 //     return trees;
 // }
 
-fn old_tree_count(area: Lines, x_step: usize, y_step: usize) -> usize{
+fn tree_count(area: Lines, x_step: usize, y_step: usize) -> usize{
 
     let mut index = 0;
     let mut trees = 0;
@@ -52,7 +53,7 @@ fn old_tree_count(area: Lines, x_step: usize, y_step: usize) -> usize{
 
         if a % y_step == 0 {
 
-            println!("Row:{}, Index: {}, len: {}",a,  index, i.len());
+            // println!("Row:{}, Index: {}, len: {}",a,  index, i.len());
             let square = i.chars().nth(index).unwrap();
 
             if square == '#' {
