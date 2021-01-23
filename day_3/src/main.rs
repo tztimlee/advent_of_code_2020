@@ -5,7 +5,6 @@ fn main() {
     let contents = fs::read_to_string("input2")
         .expect("Something went wrong reading the file");
 
-    println!("Hi Alex");
     let a = tree_count(contents.lines(), 1, 1);
     let b = tree_count(contents.lines(), 3, 1);
     let c = tree_count(contents.lines(), 5, 1);
